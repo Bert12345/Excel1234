@@ -1,0 +1,27 @@
+﻿<Window x:Class="Excel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Excel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnHelp" Grid.Row="0" Content="Help" HorizontalAlignment="Left" Margin="25,9,0,0" VerticalAlignment="Top" Width="75" Height="33"/>
+            <ListView x:Name="lvItems" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            </ListView>
+
+        </Grid>
+    </Grid>
+</Window>
