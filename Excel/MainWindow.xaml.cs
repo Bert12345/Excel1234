@@ -25,23 +25,10 @@ namespace Excel
         public MainWindow()
         {
             InitializeComponent();
-            Jokeinfo();
-        }
-
-
-        private void Jokeinfo()
-        {
-
             
-
-            StackPanel sp = new StackPanel() { Orientation = Orientation.Horizontal };
-            sp.Children.Add(new TextBlock() { Text = "Signal Name", Width = 300 });
-            sp.Children.Add(new TextBlock() { Text = "Numer of testpoints ('MPxx')", Width = 300 });
-            sp.Children.Add(new TextBlock() { Text = "Connection list", Width = 500 });
-            sp.Children.Add(new TextBlock() { Text = "CNT", Width = 100 });
-            lvItems.Items.Add(sp);
-           
         }
+
+        
 
         private void BtnGo_Click(object sender, RoutedEventArgs e)
         {
@@ -55,12 +42,24 @@ namespace Excel
                 // Load text
                 using (TextReader textReader = new StreamReader(openFileDialog.FileName))
                 {
+
+                    StackPanel sp = new StackPanel() { Orientation = Orientation.Horizontal };
+                    sp.Children.Add(new TextBlock() { Text = "SIGNAL NAME", Width = 400 });
+                    sp.Children.Add(new TextBlock() { Text = "NUMER OF TESTPOINTS ('MPxx')", Width = 200 });
+                    sp.Children.Add(new TextBlock() { Text = "CONNECTION LIST", Width = 400 });
+                    sp.Children.Add(new TextBlock() { Text = "CNT", Width = 75 });
+                    lvItems.Items.Add(sp);
                     // Load the text line by line
                     string line = string.Empty;
+                    string test = "test";
                     while ((line = textReader.ReadLine()) != null)
                     {
-                        // Append
-                        lvItems.Items.Add(line);
+                        StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
+                        spForeCast.Children.Add(new TextBlock() { Text = line, Width = 400 });
+                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 200 });
+                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 400 });
+                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 75 });
+                        lvItems.Items.Add(spForeCast);
                     }
                 }
             }

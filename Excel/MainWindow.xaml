@@ -20,10 +20,10 @@
             <Button x:Name="btnHelp" Grid.Row="0" Content="Help" HorizontalAlignment="Left" Margin="25,9,0,0" VerticalAlignment="Top" Width="75" Height="33"/>
             <Button x:Name="btnBrowse" Grid.Row="0" Content="Browse" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="75" Height="33"/>
             <Button x:Name="btnGo" Grid.Row="0" Content="Go" HorizontalAlignment="Left" Margin="256,11,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="BtnGo_Click" />
-            <ListView x:Name="lvItems" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-
-            </ListView>
-
+            <ListView x:Name="lvItems" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </Grid>
+        <Grid Grid.Column="1" Background="LightGray">
+            <Button Content="Insert" Background="White" Width="100" Height="50" Margin="10,10,88.4,360" />
         </Grid>
     </Grid>
 </Window>
