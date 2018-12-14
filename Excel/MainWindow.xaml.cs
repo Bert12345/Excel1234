@@ -52,19 +52,20 @@ namespace Excel
                     // Load the text line by line
                     string line = string.Empty;
                     string test = "test";
+                    string hallo = "55";
                     while ((line = textReader.ReadLine()) != null)
                     {
-                        string[] test1 = line.Split(':');
-                       
-                        string test2 = test1.ToString();
-                        StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
-                        spForeCast.Children.Add(new TextBlock() { Text = line, Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 200 });
-                        foreach (string haha in test1)
-                        {
-                            spForeCast.Children.Add(new TextBlock() { Text = haha, Width = 400 });
-                        }
                         
+                       
+                       
+                            
+                        
+                        StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
+                        spForeCast.Children.Add(new TextBlock() { Text = line.Remove(0, 9), Width = 400 });
+                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 200 });
+                       
+                            spForeCast.Children.Add(new TextBlock() { Text = hallo, Width = 400 });
+                                                           
                         spForeCast.Children.Add(new TextBlock() { Text = test, Width = 75 });
                         lvItems.Items.Add(spForeCast);
                     }
