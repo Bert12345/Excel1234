@@ -69,7 +69,7 @@ namespace Excel
                     {
                         string signal = line;
                         string connection = line;
-                        string testpoint = "2";
+                        string testpoint = "0";
                         StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
                         spForeCast.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
                         spForeCast.Children.Add(new TextBlock() { Text = testpoint,   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
