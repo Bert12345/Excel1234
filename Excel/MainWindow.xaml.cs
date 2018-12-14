@@ -32,6 +32,19 @@ namespace Excel
 
         private void BtnGo_Click(object sender, RoutedEventArgs e)
         {
+           
+        }
+
+        private void BtnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Hey mey men", "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+
+        }
+
+        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
+        {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.qcv)|*.qcv";
             if (openFileDialog.ShowDialog() == true)
@@ -51,22 +64,17 @@ namespace Excel
                     lvItems.Items.Add(sp);
                     // Load the text line by line
                     string line = string.Empty;
-                    string test = "test";
-                    string hallo = "55";
+
                     while ((line = textReader.ReadLine()) != null)
                     {
-                        
-                       
-                       
-                            
-                        
+                        string signal = line;
+                        string connection = line;
+                        string testpoint = "0";
                         StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
+                        spForeCast.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
+                        spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 200 });
                         spForeCast.Children.Add(new TextBlock() { Text = line.Remove(0, 9), Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 200 });
-                       
-                            spForeCast.Children.Add(new TextBlock() { Text = hallo, Width = 400 });
-                                                           
-                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 75 });
+                        spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 75 });
                         lvItems.Items.Add(spForeCast);
                     }
                 }

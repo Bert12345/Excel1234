@@ -12,18 +12,18 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Background="LightCyan">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="7*"/>
+                <RowDefinition Height="11*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnHelp" Grid.Row="0" Content="Help" HorizontalAlignment="Left" Margin="25,9,0,0" VerticalAlignment="Top" Width="75" Height="33"/>
-            <Button x:Name="btnBrowse" Grid.Row="0" Content="Browse" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="75" Height="33"/>
-            <Button x:Name="btnGo" Grid.Row="0" Content="Go" HorizontalAlignment="Left" Margin="256,11,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="BtnGo_Click" />
+            <Button x:Name="btnHelp" Grid.Row="0" Content="Help" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="50" Click="BtnHelp_Click"/>
+            <Button x:Name="btnBrowse" Grid.Row="0" Content="Browse" HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top" Width="75" Height="50" Click="BtnBrowse_Click"/>
+            <Button x:Name="btnGo" Grid.Row="0" Content="Go" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="75" Height="50" Click="BtnGo_Click" />
             <ListView x:Name="lvItems" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         </Grid>
         <Grid Grid.Column="1" Background="LightGray">
-            <Button Content="Insert" Background="White" Width="100" Height="50" Margin="10,10,88.4,360" />
+            <Button Content="Insert" Background="White" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" />
         </Grid>
     </Grid>
 </Window>
