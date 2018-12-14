@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,73 +43,27 @@ namespace Excel
            
         }
 
-        public void BtnBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            // Create OpenFileDialog
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Set filter for file extension and default file extension
-            dlg.DefaultExt = ".qcv";
-            dlg.Filter = "Text documents (.qcv)|*.qcv";
-
-            // Display OpenFileDialog by calling ShowDialog method
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Get the selected file name and display in a TextBox
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
-                
-              
-            }
-
-        }
-
         private void BtnGo_Click(object sender, RoutedEventArgs e)
         {
-            Go();
-        }
-
-        class Items
-        {
-            public string Signal { get; set; }
-            public int Testpoints { get; set; }
-            public string Connections { get; set; }
-   
-          
-        }
-
-        class ItemsConvert
-        {
-            public Items ParseLine(string line)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.qcv)|*.qcv";
+            if (openFileDialog.ShowDialog() == true)
             {
-                Items result = null;
-                var tmp = line.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-                if (tmp.Length == 7)
+                // Clear listview
+                lvItems.Items.Clear();
+
+                // Load text
+                using (TextReader textReader = new StreamReader(openFileDialog.FileName))
                 {
-                    result = new Items
+                    // Load the text line by line
+                    string line = string.Empty;
+                    while ((line = textReader.ReadLine()) != null)
                     {
-                        Signal = tmp[0],
-                        Testpoints = Convert.ToInt32(tmp[1]),
-                        Connections = tmp[2],                      
-                    };
+                        // Append
+                        lvItems.Items.Add(line);
+                    }
                 }
-                return result;
             }
         }
-
-        private void Go()
-        {
-            var data = new List<Items>();
-            var lineParser = new ItemsConvert();
-            foreach (string line in File.ReadAllLines(@"62409031.qcv"))
-            {
-                if (line.StartsWith("FlatNet")) continue;
-                var objTmp = lineParser.ParseLine(line);
-                if (objTmp != null) data.Add(objTmp);
-            }
-        }
-   
-}
+    }
 }
