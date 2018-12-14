@@ -54,10 +54,17 @@ namespace Excel
                     string test = "test";
                     while ((line = textReader.ReadLine()) != null)
                     {
+                        string[] test1 = line.Split(':');
+                       
+                        string test2 = test1.ToString();
                         StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
                         spForeCast.Children.Add(new TextBlock() { Text = line, Width = 400 });
                         spForeCast.Children.Add(new TextBlock() { Text = test, Width = 200 });
-                        spForeCast.Children.Add(new TextBlock() { Text = test, Width = 400 });
+                        foreach (string haha in test1)
+                        {
+                            spForeCast.Children.Add(new TextBlock() { Text = haha, Width = 400 });
+                        }
+                        
                         spForeCast.Children.Add(new TextBlock() { Text = test, Width = 75 });
                         lvItems.Items.Add(spForeCast);
                     }
