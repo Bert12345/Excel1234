@@ -65,16 +65,9 @@ namespace Excel
 
         }
 
-        private void BtnGo_Click(object sender, RoutedEventArgs e, string filename)
+        private void BtnGo_Click(object sender, RoutedEventArgs e)
         {
-            var data = new List<Items>();
-            var lineParser = new ItemsConvert();
-            foreach (string line in File.ReadAllLines(@"" + filename + ""))
-            {
-                if (line.StartsWith("FlatNet")) continue;
-                var objTmp = lineParser.ParseLine(line);
-                if (objTmp != null) data.Add(objTmp);
-            }
+            Go();
         }
 
         class Items
@@ -105,6 +98,17 @@ namespace Excel
             }
         }
 
+        private void Go()
+        {
+            var data = new List<Items>();
+            var lineParser = new ItemsConvert();
+            foreach (string line in File.ReadAllLines(@"62409031.qcv"))
+            {
+                if (line.StartsWith("FlatNet")) continue;
+                var objTmp = lineParser.ParseLine(line);
+                if (objTmp != null) data.Add(objTmp);
+            }
+        }
    
 }
 }
