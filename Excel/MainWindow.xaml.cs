@@ -69,7 +69,7 @@ namespace Excel
                     {
                         string signal = line;
                         string connection = line;
-                        string testpoint = "0";
+                        string testpoint = "2";
                         StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
                         spForeCast.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
                         spForeCast.Children.Add(new TextBlock() { Text = testpoint,   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
@@ -81,6 +81,16 @@ namespace Excel
                         {
                             TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.Red;
+                        }
+                        else if (test == 1)
+                        {
+                            TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
+                            tbtest.Background = Brushes.LimeGreen;
+                        }
+                        else
+                        {
+                            TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
+                            tbtest.Background = Brushes.Orange;
                         }
                     }
                 }
