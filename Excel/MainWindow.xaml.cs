@@ -57,10 +57,10 @@ namespace Excel
                 {
 
                     StackPanel sp = new StackPanel() { Orientation = Orientation.Horizontal };
-                    sp.Children.Add(new TextBlock() { Text = "SIGNAL NAME", Width = 400 });
-                    sp.Children.Add(new TextBlock() { Text = "NUMER OF TESTPOINTS ('MPxx')", Width = 200 });
-                    sp.Children.Add(new TextBlock() { Text = "CONNECTION LIST", Width = 400 });
-                    sp.Children.Add(new TextBlock() { Text = "CNT", Width = 75 });
+                    sp.Children.Add(new TextBlock() { Text = "SIGNAL NAME", Width = 400, TextAlignment = TextAlignment.Center });
+                    sp.Children.Add(new TextBlock() { Text = "NUMER OF TESTPOINTS ('MPxx')", Width = 200, TextAlignment = TextAlignment.Center });
+                    sp.Children.Add(new TextBlock() { Text = "CONNECTION LIST", Width = 400, TextAlignment = TextAlignment.Center });
+                    sp.Children.Add(new TextBlock() { Text = "CNT", Width = 75, TextAlignment = TextAlignment.Center });
                     lvItems.Items.Add(sp);
                     // Load the text line by line
                     string line = string.Empty;
@@ -72,10 +72,16 @@ namespace Excel
                         string testpoint = "0";
                         StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
                         spForeCast.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 200 });
+                        spForeCast.Children.Add(new TextBlock() { Text = testpoint,   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
                         spForeCast.Children.Add(new TextBlock() { Text = line.Remove(0, 9), Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 75 });
+                        spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 75, TextAlignment = TextAlignment.Center });
                         lvItems.Items.Add(spForeCast);
+                        int test = int.Parse(testpoint);
+                        if (test <= 0)
+                        {
+                            TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
+                            tbtest.Background = Brushes.Red;
+                        }
                     }
                 }
             }

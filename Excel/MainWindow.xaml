@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Excel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
+        Title="MainWindow" Height="600" Width="1080" WindowState="Maximized" BorderThickness="0">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -20,7 +20,7 @@
             <Button x:Name="btnHelp" Grid.Row="0" Content="Help" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="50" Click="BtnHelp_Click"/>
             <Button x:Name="btnBrowse" Grid.Row="0" Content="Browse" HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top" Width="75" Height="50" Click="BtnBrowse_Click"/>
             <Button x:Name="btnGo" Grid.Row="0" Content="Go" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="75" Height="50" Click="BtnGo_Click" />
-            <ListView x:Name="lvItems" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <ListView x:Name="lvItems" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="1" />
         </Grid>
         <Grid Grid.Column="1" Background="LightGray">
             <Button Content="Insert" Background="White" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" />
