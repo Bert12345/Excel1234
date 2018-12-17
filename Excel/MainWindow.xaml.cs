@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -59,7 +60,7 @@ namespace Excel
 
                     StackPanel sp = new StackPanel() { Orientation = Orientation.Horizontal };
                     sp.Children.Add(new TextBlock() { Text = "SIGNAL NAME", Width = 400, TextAlignment = TextAlignment.Center });
-                    sp.Children.Add(new TextBlock() { Text = "NUMER OF TESTPOINTS ('MPxx')", Width = 200, TextAlignment = TextAlignment.Center });
+                    sp.Children.Add(new TextBlock() { Text = "NUMER OF TESTPOINTS ('MPxx')", Width = 200, TextAlignment = TextAlignment.Center, Name = "nummers" });
                     sp.Children.Add(new TextBlock() { Text = "CONNECTION LIST", Width = 400, TextAlignment = TextAlignment.Center });
                     sp.Children.Add(new TextBlock() { Text = "CNT", Width = 75, TextAlignment = TextAlignment.Center });
                     lvItems.Items.Add(sp);
@@ -99,7 +100,13 @@ namespace Excel
                             TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.Orange;
                         }
+
+                        
                     }
+
+                    string colName = sp.Children.OfType<TextBlock>().Where(b => b.Name.Equals("nummers")).FirstOrDefault().Text.ToString();
+                    CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvItems.ItemsSource);
+                    view.SortDescriptions.Add(new SortDescription(colName, ListSortDirection.Ascending));
                 }
             }
         }
