@@ -13,3 +13,18 @@ D:\school\stage\Excel\Excel\obj\Debug\Excel.csproj.GenerateResource.cache
 D:\school\stage\Excel\Excel\obj\Debug\Excel.csproj.CoreCompileInputs.cache
 D:\school\stage\Excel\Excel\obj\Debug\Excel.exe
 D:\school\stage\Excel\Excel\obj\Debug\Excel.pdb
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\bin\Debug\Excel.exe.config
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\bin\Debug\Excel.exe
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\bin\Debug\Excel.pdb
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.csprojAssemblyReference.cache
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\MainWindow.g.cs
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\App.g.cs
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel_MarkupCompile.cache
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel_MarkupCompile.lref
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\MainWindow.baml
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.g.resources
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.Properties.Resources.resources
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.csproj.GenerateResource.cache
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.csproj.CoreCompileInputs.cache
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.exe
+D:\Gebruikers\Koen Sanders\Documenten\school\BPV\ASML\Stage\Visual Studio\Excel1234\Excel\obj\Debug\Excel.pdb
