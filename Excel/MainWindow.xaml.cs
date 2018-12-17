@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -67,22 +68,28 @@ namespace Excel
 
                     while ((line = textReader.ReadLine()) != null)
                     {
+                        string MP = "MP";
+                        int count = 0;
+                        foreach (Match match in Regex.Matches(line, MP))
+                        {
+                            count++;
+                        }
                         string signal = line;
                         string connection = line;
                         string testpoint = "0";
                         StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
                         spForeCast.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = testpoint,   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
+                        spForeCast.Children.Add(new TextBlock() { Text = count.ToString(),   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
                         spForeCast.Children.Add(new TextBlock() { Text = line.Remove(0, 9), Width = 400 });
                         spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 75, TextAlignment = TextAlignment.Center });
                         lvItems.Items.Add(spForeCast);
                         int test = int.Parse(testpoint);
-                        if (test <= 0)
+                        if (count <= 0)
                         {
                             TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.Red;
                         }
-                        else if (test == 1)
+                        else if (count == 1)
                         {
                             TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.LimeGreen;
