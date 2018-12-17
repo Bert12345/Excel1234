@@ -25,7 +25,9 @@ namespace Excel
         public MainWindow()
         {
             InitializeComponent();
-            
+            string msg = "COUNT ALL TESTPOINTS ('MPxx-1') FROM DxDESIGNER PINLIST." + Environment.NewLine + " " + Environment.NewLine + "In xDM (new DxDesigner): File --> Export --> Quick Connection View" + Environment.NewLine + "* General" + Environment.NewLine + "--> select 'board'" + Environment.NewLine + "* Display" + Environment.NewLine + "--> select 'Display Nets', 'Flat Mode', 'Compress Flatnets'" + Environment.NewLine + "'Single Line per Net'" + Environment.NewLine + "'Single Line per Net'" + Environment.NewLine + "* Advanced" + Environment.NewLine + "--> select 'Exclude Special Components'" + Environment.NewLine + "Sort = None, Filter = None" + Environment.NewLine + " " + Environment.NewLine + "Leave other boxes un-checked." + Environment.NewLine + " " + Environment.NewLine + "Click 'Browse'"
+               + Environment.NewLine + "Click GO!" + Environment.NewLine + " " + Environment.NewLine + " " + Environment.NewLine + "Features:" + Environment.NewLine + "- count all occurrences of 'MP' of '_MP' from the netlist" + Environment.NewLine + "- then sort on number of testpoints";
+            MessageBox.Show(msg);
         }
 
         
@@ -37,10 +39,11 @@ namespace Excel
 
         private void BtnHelp_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Hey mey men", "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+            string msg = "COUNT ALL TESTPOINTS ('MPxx-1') FROM DxDESIGNER PINLIST." + Environment.NewLine + " " + Environment.NewLine + "In xDM (new DxDesigner): File --> Export --> Quick Connection View" + Environment.NewLine + "* General" + Environment.NewLine + "--> select 'board'" + Environment.NewLine + "* Display" + Environment.NewLine + "--> select 'Display Nets', 'Flat Mode', 'Compress Flatnets'" + Environment.NewLine + "'Single Line per Net'" + Environment.NewLine + "'Single Line per Net'" + Environment.NewLine + "* Advanced" + Environment.NewLine + "--> select 'Exclude Special Components'" + Environment.NewLine + "Sort = None, Filter = None" + Environment.NewLine + " " + Environment.NewLine + "Leave other boxes un-checked." + Environment.NewLine + " " + Environment.NewLine + "Click 'Browse'"
+                + Environment.NewLine + "Click GO!" + Environment.NewLine + " " + Environment.NewLine + " " + Environment.NewLine + "Features:" + Environment.NewLine + "- count all occurrences of 'MP' of '_MP' from the netlist" + Environment.NewLine + "- then sort on number of testpoints";
 
 
-
+             MessageBox.Show(msg);
         }
 
         private void BtnBrowse_Click(object sender, RoutedEventArgs e)
@@ -70,26 +73,26 @@ namespace Excel
                         string signal = line;
                         string connection = line;
                         string testpoint = "0";
-                        StackPanel spForeCast = new StackPanel() { Orientation = Orientation.Horizontal };
-                        spForeCast.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = testpoint,   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
-                        spForeCast.Children.Add(new TextBlock() { Text = line.Remove(0, 9), Width = 400 });
-                        spForeCast.Children.Add(new TextBlock() { Text = testpoint, Width = 75, TextAlignment = TextAlignment.Center });
-                        lvItems.Items.Add(spForeCast);
+                        StackPanel spItems = new StackPanel() { Orientation = Orientation.Horizontal };
+                        spItems.Children.Add(new TextBlock() { Text = signal.Remove(0, 9), Width = 400 });
+                        spItems.Children.Add(new TextBlock() { Text = testpoint,   Width = 200, TextAlignment = TextAlignment.Center, Name = "tbtest" });
+                        spItems.Children.Add(new TextBlock() { Text = line.Remove(0, 9), Width = 400 });
+                        spItems.Children.Add(new TextBlock() { Text = testpoint, Width = 75, TextAlignment = TextAlignment.Center });
+                        lvItems.Items.Add(spItems);
                         int test = int.Parse(testpoint);
                         if (test <= 0)
                         {
-                            TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
+                            TextBlock tbtest = spItems.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.Red;
                         }
                         else if (test == 1)
                         {
-                            TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
+                            TextBlock tbtest = spItems.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.LimeGreen;
                         }
                         else
                         {
-                            TextBlock tbtest = spForeCast.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
+                            TextBlock tbtest = spItems.Children.OfType<TextBlock>().Where(b => b.Name.Equals("tbtest")).FirstOrDefault();
                             tbtest.Background = Brushes.Orange;
                         }
                     }
